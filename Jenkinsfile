@@ -9,6 +9,7 @@ pipeline {
                 sh 'composer --version'
                 sh 'cp .env.example .env'
                 sh 'php artisan key:generate'
+                sh 'sqlite3 database/database.sqlite'
                 sh 'php artisan migrate'
             }
         }

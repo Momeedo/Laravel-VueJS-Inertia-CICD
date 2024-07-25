@@ -38,5 +38,11 @@ pipeline {
                 sh "php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-html 'reports/coverage'"
             }
         }
+        stage("Static code analysis larastan/phpcs") {
+            steps {
+                sh "vendor/bin/phpstan analyse --memory-limit=2G"
+                sh "vendor/bin/phpcs"
+            }
+        }
   }
 }

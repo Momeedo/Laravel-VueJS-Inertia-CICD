@@ -35,6 +35,7 @@ pipeline {
         }
         stage("Code coverage") {
             steps {
+                sh 'export XDEBUG_MODE=coverage'
                 sh "vendor/bin/phpunit --coverage-html 'reports/coverage'"
             }
         }

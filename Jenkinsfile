@@ -12,7 +12,7 @@ pipeline {
                 sh 'sqlite3 database/database.sqlite'
                 sh 'php artisan migrate'
                 sh 'npm install'
-                sh 'npm run build'
+                sh 'npm run build' 
             }
         }
         stage("Unit test") {

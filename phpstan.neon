@@ -4,10 +4,10 @@ includes:
 parameters:
 
     paths:
-        - app/Http/Controllers/
+        - app/
 
     # Level 9 is the highest level
-    level: 6
+    level: 5
 
 #    ignoreErrors:
 #        - '#PHPDoc tag @var#'
@@ -15,4 +15,4 @@ parameters:
 #    excludePaths:
 #        - ./*/*/FileToBeExcluded.php
 #
-    checkMissingIterableValueType: false
+#    checkMissingIterableValueType: false

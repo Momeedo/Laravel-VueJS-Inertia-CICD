@@ -35,6 +35,7 @@ pipeline {
         }
         stage("Code coverage") {
             steps {
+                sh "rm -rf reports/coverage/*"
                 sh "php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-html 'reports/coverage'"
             }
         }

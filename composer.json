@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
@@ -13,6 +16,11 @@
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
+        "codeception/codeception": "^5.1",
+        "codeception/module-asserts": "^3.0",
+        "codeception/module-laravel": "^3.1",
+        "codeception/module-rest": "^3.4",
+        "codeception/module-webdriver": "^4.0",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^2.9",
         "laravel/breeze": "^2.1",
@@ -21,7 +29,8 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.0",
         "phpunit/phpunit": "^11.0.1",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "codeception/module-phpbrowser": "*"
     },
     "autoload": {
         "psr-4": {

@@ -45,5 +45,40 @@ pipeline {
                 sh "vendor/bin/phpcs"
             }
         }
+        /*
+        stage("Docker build") {
+            steps {
+                sh "docker rmi danielgara/laravel8cdpart2"
+                sh "docker build -t danielgara/laravel8cdpart2 --no-cache ."
+            }
+        }
+        stage("Docker push") {
+            environment {
+                DOCKER_USERNAME = credentials("docker-user")
+                DOCKER_PASSWORD = credentials("docker-password")
+            }
+            steps {
+                sh "docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}"
+                sh "docker push danielgara/laravel8cdpart2"
+            }
+        }
+        stage("Deploy to staging") {
+            steps {
+                sh "docker run -d --rm -p 80:80 --name laravel8cd danielgara/laravel8cd"
+            }
+        }
+        stage("Acceptance tests") {
+            steps {
+                sleep 20
+                sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
+                sh "vendor/bin/codecept run"
+            }
+            post {
+                always {
+                    sh "docker stop laravel8cd"
+                }
+            }
+        }
+        */
   }
 }
